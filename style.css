@@ -1,0 +1,782 @@
+/* --- Root Variables: Kultura Filipino Inspired --- */
+/* This section defines the color palette, typography, and other global styles. */
+/* Inspired by Kultura Filipino's branding, it uses earthy tones and elegant fonts. */
+:root {
+    /* Primary Palette - Earthy Tones */
+    --kf-primary-brown: #5D4037; /* A rich, medium-dark brown */
+    --kf-secondary-brown: #795548; /* A slightly lighter, warmer brown */
+    --kf-light-beige: #F5F5DC; /* Warm beige for backgrounds */
+    --kf-cream: #FFF8E1; /* A soft, warm cream for content areas */
+    --kf-off-white: #FAF7F2; /* Very light, almost white, for contrast */
+
+    /* Accent Palette */
+    --kf-gold: #B08D57; /* Muted, antique gold for accents and highlights */
+    --kf-muted-green: #687A61; /* A soft, earthy green */
+    --kf-dark-green: #384a3e; /* Darker, forest-like green */
+    --kf-terracotta: #A1662F; /* Warm terracotta for subtle call-to-actions or details */
+
+    /* Text Palette */
+    --kf-text-dark: #3E2723; /* Very dark brown for primary text */
+    --kf-text-medium: #6D4C41; /* Medium brown for secondary text */
+    --kf-text-light: #A1887F; /* Lighter brown/beige for subtle text */
+
+    /* Borders and Shadows */
+    --kf-border-color: #D7CCC8; /* Light brownish-gray for borders */
+    --kf-shadow-soft: 0 3px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    --kf-shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1); /* Medium shadow */
+
+    /* Typography - Inspired by Kultura's elegant mix */
+    /* Define font families for headings, body text, and accents. */
+    --kf-font-serif-headings: 'Cormorant Garamond', 'Lora', 'Georgia', serif; /* Elegant serif for main titles */
+    --kf-font-sans-body: ' Lato', 'Open Sans','Helvetica Neue', Arial, sans-serif; /* Clean sans-serif for body text & UI elements */
+    --kf-font-script-accent: 'Dancing Script', 'Parisienne', cursive; /* Optional for special accents, use sparingly */
+
+    /* UI Elements */
+    --kf-border-radius: 4px; /* Subtle rounding for elements */
+    --kf-transition-smooth: all 0.3s ease-in-out; /* Smooth transition for animations */
+}
+
+/* --- Base HTML and Body Styling --- */
+/* Basic reset and default styles for the HTML and body elements. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border don't affect element's total width/height */
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: var(--kf-font-sans-body); /* Default font for the body */
+    line-height: 1.65; /* Default line height for readability */
+    color: var(--kf-text-dark); /* Default text color */
+    background-color: var(--kf-light-beige); /* Default background color */
+    /* OPTIONAL PNG/JPG FILE: Add a subtle texture to the background. */
+    /* Replace 'images/your_subtle_background_texture.png' with the actual path to your image. */
+    /* Example: background-image: url('images/light_beige_texture.png'); */
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column; /* Arranges child elements (header, main, footer) vertically */
+    -webkit-font-smoothing: antialiased; /* Improves font rendering on WebKit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Improves font rendering on Firefox */
+}
+
+/* --- Header Styling --- */
+/* Styles for the site header, including logo, navigation, and welcome message. */
+header {
+    background-color: var(--kf-primary-brown); /* Header background color */
+    color: var(--kf-off-white); /* Header text color */
+    padding: 0.8rem 0; /* Padding above and below header content */
+    box-shadow: var(--kf-shadow-medium); /* Adds a subtle shadow below the header */
+    position: sticky; /* Makes the header stick to the top on scroll */
+    top: 0;
+    z-index: 1000; /* Ensures header stays above other content */
+    border-bottom: 2px solid var(--kf-gold); /* Accent border at the bottom of the header */
+}
+
+.header-content {
+    max-width: 1280px; /* Maximum width of the header content */
+    margin: 0 auto; /* Centers the header content */
+    padding: 0 25px; /* Padding on the left and right of header content */
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Distributes space between logo/nav and other elements */
+    align-items: center; /* Aligns items vertically in the center */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 40px; /* Ensures a gap between logo and nav */
+}
+
+.logo img {
+    /* PNG/SVG FILE: Your main logo. */
+    /* Replace 'images/logo_kultura_inspired.png' with the path to your logo file. */
+    /* This logo should look good on the primary brown background. Consider a version with gold elements. */
+    /* Example: src: url('images/logo_main.png'); */
+    height: 50px; /* Height of the logo */
+    width: auto; /* Width adjusts automatically to maintain aspect ratio */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+.logo img:hover {
+    opacity: 0.9; /* Slight transparency on hover */
+}
+.logo a {
+    text-decoration: none; /* Removes underline from the logo link */
+    color: var(--kf-off-white); /* Color of the logo text (if any) */
+    font-family: var(--kf-font-serif-headings); /* Font for the logo text */
+    font-size: 2rem; /* Size of the logo text */
+    font-weight: 600; /* Boldness of the logo text */
+}
+
+nav ul {
+    list-style: none; /* Removes default bullet points from the list */
+    display: flex; /* Arranges navigation items in a row */
+    gap: 30px; /* Space between navigation items */
+}
+
+nav a {
+    color: rgba(255, 248, 225, 0.85); /* Color of navigation links */
+    text-decoration: none; /* Removes underline from navigation links */
+    font-family: var(--kf-font-sans-body); /* Font for navigation links */
+    font-weight: 500; /* Boldness of navigation links */
+    font-size: 1rem; /* Size of navigation links */
+    padding: 8px 5px; /* Padding around navigation links */
+    position: relative; /* Needed for the underline effect */
+    transition: var(--kf-transition-smooth); /* Smooth transition for hover effects */
+    letter-spacing: 0.5px; /* Adds spacing between letters */
+}
+nav a::after { /* Creates the underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0; /* Starts with no width */
+    height: 1px;
+    background-color: var(--kf-gold); /* Color of the underline */
+    left: 0;
+    bottom: -1px;
+    transition: width 0.3s ease-out; /* Smooth transition for the underline width */
+}
+nav a:hover::after,
+nav a:focus::after {
+    width: 100%; /* Underline expands to full width on hover/focus */
+}
+nav a:hover, nav a:focus {
+    color: var(--kf-off-white); /* Text color changes on hover/focus */
+}
+
+.welcome-message {
+    margin-left: auto; /* Pushes this to the far right of the header */
+    padding-left: 25px; /* Space to its left */
+    font-size: 0.9rem; /* Font size for the welcome message */
+    color: rgba(255, 248, 225, 0.75); /* Color of the welcome message */
+    font-style: italic; /* Italicizes the welcome message */
+}
+
+/* --- Main Content Container --- */
+/* Styles for the main content area of the pages. */
+main.container {
+    /* This is the main container for pages like home.php, product_detail.php, etc. */
+    max-width: 1280px; /* Maximum width for PC screens */
+    width: 100%; /* Allows it to be responsive by default */
+    margin: 40px auto; /* Centers the container with top/bottom margin */
+    padding: 35px 40px; /* Internal spacing */
+    background-color: var(--kf-cream); /* Background color of the main content area */
+    border-radius: var(--kf-border-radius); /* Rounded corners */
+    box-shadow: var(--kf-shadow-soft); /* Subtle shadow */
+    border: 1px solid var(--kf-border-color); /* Light border */
+    flex-grow: 1; /* Allows it to take up available vertical space if body is flex */
+}
+
+/* --- Headings Styling --- */
+/* Default styles for heading elements (h1, h2, h3, etc.). */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--kf-text-dark); /* Default color for headings */
+    line-height: 1.35; /* Line height for headings */
+}
+h2 { /* Styles for H2 headings */
+    font-family: var(--kf-font-serif-headings); /* Specific font for H2 */
+    font-size: 2.2rem; /* Font size for H2 */
+    margin-bottom: 28px; /* Space below H2 */
+    text-align: center; /* Centers H2 text */
+    font-weight: 500; /* Boldness of H2 */
+    color: var(--kf-primary-brown); /* Specific color for H2 */
+}
+h3 { /* Styles for H3 headings */
+    font-family: var(--kf-font-serif-headings); /* Specific font for H3 */
+    font-size: 1.7rem; /* Font size for H3 */
+    margin-top: 35px; /* Space above H3 */
+    margin-bottom: 18px; /* Space below H3 */
+    font-weight: 500; /* Boldness of H3 */
+    border-bottom: 1px solid var(--kf-border-color); /* Underline for H3 */
+    padding-bottom: 8px; /* Space between text and underline */
+}
+
+/* --- Hero Section (Home Page) --- */
+/* Styles for the hero banner section on the home page. */
+.hero-section {
+    position: relative; /* Needed for absolute positioning of child elements */
+    width: 100%; /* Takes full width of its container */
+    height: 420px; /* Height of the hero section */
+    border-radius: var(--kf-border-radius); /* Rounded corners */
+    overflow: hidden; /* Hides any content overflowing the rounded corners */
+    margin-bottom: 35px; /* Space below the hero section */
+    background-color: var(--kf-secondary-brown); /* Fallback background if image doesn't load */
+}
+.hero-section img {
+    /* JPG/PNG FILE: Your hero banner image. */
+    /* Replace 'images/hero_banner_filipino_crafts.jpg' with the path to your hero image. */
+    /* This image should ideally showcase Filipino craftsmanship or scenic beauty. */
+    /* Example: src: url('images/hero_banner.jpg'); */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area, cropping if necessary */
+    filter: brightness(0.7) contrast(0.95); /* Adjusts image brightness and contrast */
+    transition: transform 0.4s ease; /* Smooth transition for hover effect */
+}
+.hero-section:hover img {
+    transform: scale(1.02); /* Slightly zooms the image on hover */
+}
+.hero-content { /* Styles for the text and button overlaying the hero image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the content perfectly */
+    z-index: 1; /* Ensures content is above the image */
+    text-align: center;
+    padding: 25px;
+    max-width: 650px;
+    color: var(--kf-off-white); /* Text color for hero content */
+}
+.hero-content h2 {
+    font-family: var(--kf-font-serif-headings);
+    font-size: 2.8rem;
+    color: var(--kf-off-white); /* Overrides default h2 color */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Adds a subtle shadow to the text */
+    font-weight: 600;
+}
+.hero-content p {
+    font-size: 1.15rem;
+    color: rgba(255, 248, 225, 0.95);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+.hero-button { /* Styles for the call-to-action button in the hero section */
+    background-color: var(--kf-gold);
+    border: 1px solid var(--kf-gold);
+    color: var(--kf-text-dark);
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--kf-transition-smooth);
+    border-radius: var(--kf-border-radius);
+    text-transform: uppercase; /* Makes button text uppercase */
+    letter-spacing: 1px;
+}
+.hero-button:hover {
+    background-color: transparent; /* Transparent background on hover */
+    border-color: var(--kf-off-white); /* Border color changes on hover */
+    color: var(--kf-off-white); /* Text color changes on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* --- Form Styling --- */
+/* General styles for forms used in login, signup, etc. */
+form {
+    display: flex;
+    flex-direction: column; /* Stacks form elements vertically */
+    gap: 18px; /* Space between form elements */
+    max-width: 520px; /* Maximum width of the form */
+    margin: 25px auto; /* Centers the form */
+    padding: 28px; /* Internal spacing within the form */
+    background-color: var(--kf-off-white); /* Background color of the form */
+    border-radius: var(--kf-border-radius);
+    border: 1px solid var(--kf-border-color);
+    box-shadow: var(--kf-shadow-soft);
+}
+form label {
+    font-weight: 500;
+    color: var(--kf-text-medium);
+    margin-bottom: 3px; /* Space below the label */
+    display: block; /* Ensures label takes its own line */
+    font-size: 0.9rem;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="number"],
+form select,
+form textarea { /* Common styles for various input fields */
+    width: 100%; /* Makes input fields take full width of the form */
+    padding: 10px 12px;
+    border: 1px solid var(--kf-border-color);
+    border-radius: var(--kf-border-radius);
+    font-size: 0.95rem;
+    font-family: var(--kf-font-sans-body);
+    color: var(--kf-text-dark);
+    background-color: var(--kf-off-white);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for focus effects */
+}
+form input:focus,
+form select:focus,
+form textarea:focus { /* Styles for input fields when they are focused */
+    border-color: var(--kf-primary-brown); /* Border color changes on focus */
+    box-shadow: 0 0 0 2px rgba(93, 64, 55, 0.15); /* Adds an outer glow on focus */
+    outline: none; /* Removes default browser outline */
+}
+form textarea {
+    resize: vertical; /* Allows vertical resizing of textareas */
+    min-height: 85px; /* Minimum height for textareas */
+}
+
+/* --- Buttons --- */
+/* General styles for buttons used throughout the site. */
+.button,
+button.button { /* Targets both <a> tags styled as buttons and actual <button> elements */
+    display: inline-block; /* Allows setting padding and margin */
+    padding: 10px 22px;
+    background-color: var(--kf-secondary-brown); /* Default button background color */
+    color: var(--kf-off-white); /* Default button text color */
+    border: 1px solid var(--kf-secondary-brown); /* Default button border */
+    border-radius: var(--kf-border-radius);
+    cursor: pointer; /* Changes cursor to a pointer on hover */
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none; /* Removes underline from <a> tags styled as buttons */
+    text-align: center;
+    transition: var(--kf-transition-smooth);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+.button:hover,
+button.button:hover {
+    background-color: var(--kf-primary-brown); /* Darker background on hover */
+    border-color: var(--kf-primary-brown);
+    transform: translateY(-1px); /* Slight upward movement */
+    box-shadow: var(--kf-shadow-soft);
+}
+.button:active,
+button.button:active { /* Styles for when the button is clicked */
+    transform: translateY(0);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); /* Inner shadow to give a pressed look */
+}
+.button-group { /* Styles for grouping multiple buttons together */
+    display: flex;
+    justify-content: center; /* Centers buttons within the group */
+    gap: 15px; /* Space between buttons in the group */
+    margin-top: 22px; /* Space above the button group */
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+}
+.button.accent, button.button.accent { /* Styles for accent buttons (e.g., "Buy Now") */
+    background-color: var(--kf-gold);
+    border-color: var(--kf-gold);
+    color: var(--kf-text-dark);
+}
+.button.accent:hover, button.button.accent:hover {
+    background-color: #a57d4a; /* Darker gold on hover */
+    border-color: #a57d4a;
+    color: var(--kf-off-white);
+}
+
+.remove-button { /* Specific style for "Remove" buttons (e.g., in cart) */
+    background-color: var(--kf-terracotta);
+    border-color: var(--kf-terracotta);
+}
+.remove-button:hover {
+    background-color: #8d5320; /* Darker terracotta on hover */
+    border-color: #8d5320;
+}
+
+/* --- Messages --- */
+/* Styles for error and success messages. */
+.error-message, .upload-status.error-message { /* Styles for error messages */
+    background-color: #FFF0E6; /* Light reddish background */
+    color: var(--kf-terracotta); /* Terracotta text color */
+    border: 1px solid var(--kf-terracotta);
+    padding: 12px;
+    border-radius: var(--kf-border-radius);
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.success-message, .upload-status.success-message { /* Styles for success messages */
+    background-color: #E8F5E9; /* Light greenish background */
+    color: var(--kf-muted-green); /* Muted green text color */
+    border: 1px solid var(--kf-muted-green);
+    padding: 12px;
+    border-radius: var(--kf-border-radius);
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Product Grid (Home Page) --- */
+/* Styles for displaying products in a grid layout on the home page. */
+.product-grid {
+    display: grid;
+    /* Adjusting minmax for a 1280px container to fit 4-5 items comfortably */
+    /* Creates a responsive grid that shows as many columns as fit, each at least 220px wide */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 28px; /* Space between grid items */
+    margin-top: 30px; /* Space above the product grid */
+}
+.product-link { /* Styles for individual product items in the grid */
+    background-color: var(--kf-off-white);
+    border: 1px solid var(--kf-border-color);
+    border-radius: var(--kf-border-radius);
+    padding: 18px;
+    text-align: left; /* Aligns product name and price to the left */
+    text-decoration: none;
+    color: var(--kf-text-dark);
+    transition: var(--kf-transition-smooth), box-shadow 0.2s ease;
+    display: flex; /* Enables flexbox for aligning content within the product link */
+    flex-direction: column; /* Stacks image, name, price vertically */
+    box-shadow: var(--kf-shadow-soft);
+}
+.product-link:hover {
+    transform: translateY(-4px); /* Slight upward movement on hover */
+    box-shadow: var(--kf-shadow-medium); /* More prominent shadow on hover */
+    border-color: var(--kf-secondary-brown); /* Border color changes on hover */
+}
+.product-link img {
+    /* JPG/PNG FILE: Product image displayed in the grid. */
+    /* Replace 'images/product_weave_bag.jpg' with a placeholder or ensure dynamic paths are correct. */
+    /* Example: src: url('images/default_product.png'); */
+    max-width: 100%; /* Ensures image doesn't overflow its container */
+    height: 220px; /* Fixed height for product images */
+    object-fit: cover; /* Covers the area, cropping if needed, to maintain aspect ratio */
+    border-radius: var(--kf-border-radius);
+    margin-bottom: 15px; /* Space below the image */
+    background-color: var(--kf-light-beige); /* Fallback background for images */
+    border: 1px solid var(--kf-border-color);
+}
+.product-link span { /* Styles for the product name */
+    font-family: var(--kf-font-serif-headings);
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--kf-primary-brown);
+    margin-bottom: 8px;
+    line-height: 1.3;
+    min-height: 2.6em; /* Ensures space for at least two lines of text, preventing layout shifts */
+}
+.product-price { /* Styles for the product price */
+    font-size: 1rem;
+    color: var(--kf-text-medium);
+    font-weight: 600;
+    margin-top: auto; /* Pushes price to the bottom if product name is short */
+}
+
+/* --- Search Bar --- */
+/* Styles for the search input field. */
+.search-input {
+    width: 100%;
+    max-width: 480px; /* Maximum width of the search bar */
+    padding: 12px 18px;
+    border: 1px solid var(--kf-border-color);
+    border-radius: 20px; /* Rounded ends for the search bar */
+    font-size: 0.95rem;
+    margin: 30px auto 0 auto; /* Centered, with space above */
+    display: block; /* Allows margin auto to center it */
+    background-color: var(--kf-off-white);
+}
+.search-input:focus {
+    border-color: var(--kf-primary-brown);
+    box-shadow: 0 0 0 2px rgba(93, 64, 55, 0.15);
+    outline: none;
+}
+
+/* ... (CSS for product details, profile, cart, about will also be here) ... */
+/* --- Product Details Page Specifics --- */
+/* Styles for the product detail page, including slideshow. */
+.slideshow-container {
+    position: relative;
+    max-width: 600px; /* Max width of the slideshow */
+    margin: 0 auto 30px auto; /* Centered with space below */
+    overflow: hidden;
+    border-radius: var(--kf-border-radius);
+    border: 1px solid var(--kf-border-color);
+    background-color: var(--kf-off-white);
+}
+.slides {
+    /* JPG/PNG FILE: Product images for the slideshow. */
+    /* These are typically dynamically loaded. Ensure paths are correct. */
+    /* Example: background-image: url('images/product_image_1.jpg'); */
+    width: 100%;
+    display: none; /* Only one slide visible at a time */
+    height: 420px; /* Height of the slideshow images */
+    object-fit: cover;
+    background-color: var(--kf-light-beige); /* Fallback if image is missing */
+}
+/* Styles for slideshow arrows, description box, etc., would follow here. */
+/* Ensure to add specific styling for .arrow, .left-arrow, .right-arrow, .description-box */
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+}
+.left-arrow {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.right-arrow {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+.arrow:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.description-box {
+    /* Styles for the box containing product details, size/quantity selection, and buttons */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--kf-off-white);
+    border: 1px solid var(--kf-border-color);
+    border-radius: var(--kf-border-radius);
+}
+.form-group {
+    margin-bottom: 15px; /* Space between form groups (e.g., size and quantity) */
+}
+
+/* --- Cart Page Specifics --- */
+/* Styles for the shopping cart page. */
+#cart-list {
+    margin-top: 20px; /* Space above the list of cart items */
+}
+.cart-item {
+    display: flex; /* Arranges item image, info, and remove button in a row */
+    align-items: center; /* Vertically aligns items in the cart */
+    padding: 15px 0;
+    border-bottom: 1px solid var(--kf-border-color); /* Separator line between items */
+    gap: 15px; /* Space between image, info, and button */
+}
+.cart-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+.cart-item img {
+    /* JPG/PNG FILE: Image for items in the cart. */
+    /* Ensure these are correctly linked, possibly using a placeholder if an image is missing. */
+    /* Example: src: url('images/cart_item_placeholder.png'); */
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--kf-border-radius);
+    border: 1px solid var(--kf-border-color);
+}
+.cart-item-info {
+    flex-grow: 1; /* Allows info section to take available space */
+}
+.cart-item-info a {
+    color: var(--kf-primary-brown);
+    text-decoration: none;
+    font-weight: bold;
+}
+.cart-item-info a:hover {
+    text-decoration: underline;
+}
+.remove-form { /* Adjusts the form containing the remove button */
+    margin: 0; /* Resets default form margins */
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+.cart-total {
+    margin-top: 25px;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--kf-primary-brown);
+}
+.no-items { /* Message shown when cart is empty */
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--kf-text-medium);
+    padding: 30px 0;
+}
+
+/* --- Profile Page Specifics --- */
+/* Styles for the user profile page. */
+.profile-container {
+    text-align: center; /* Centers content on the profile page */
+}
+.profile-image {
+    /* JPG/PNG FILE: User's profile image. */
+    /* Default image should be specified. Uploaded images will replace this path. */
+    /* Example: src: url('images/default_profile.png'); */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--kf-gold); /* Accent border around the profile image */
+    box-shadow: var(--kf-shadow-medium);
+}
+.profile-container p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--kf-text-medium);
+}
+.profile-container p strong {
+    color: var(--kf-text-dark);
+}
+.profile-container form { /* Specific adjustments for the profile image upload form */
+    max-width: 350px; /* Narrower form for just the file input and button */
+    margin-top: 30px;
+}
+input[type="file"] { /* Styling for the file input itself */
+    margin-bottom: 15px;
+    display: block; /* Makes it take its own line */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- About Us Page Specifics --- */
+/* Styles for the About Us page. */
+.about-page h2, .about-page h3 {
+    text-align: left; /* Left-aligns headings on the About Us page */
+}
+.about-page h2 {
+    text-align: center; /* Center the main "Our Story" heading */
+    margin-bottom: 30px;
+}
+.about-content {
+    display: flex;
+    gap: 30px; /* Space between text and image */
+    align-items: flex-start; /* Aligns items to the top */
+    margin-bottom: 30px;
+}
+.about-text {
+    flex: 2; /* Text takes up more space */
+}
+.about-image {
+    flex: 1; /* Image takes less space */
+    text-align: center; /* Centers the image if it's smaller than the container */
+}
+.about-image img {
+    /* JPG/PNG FILE: Image for the About Us page (e.g., team photo, craftsmanship). */
+    /* Replace 'images/about_us_photo.jpg' with the path to your image. */
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--kf-border-radius);
+    box-shadow: var(--kf-shadow-medium);
+    border: 1px solid var(--kf-border-color);
+}
+.values-list {
+    list-style: disc; /* Use disc bullet points */
+    margin-left: 25px; /* Indent the list */
+    margin-bottom: 25px;
+}
+.values-list li {
+    margin-bottom: 8px;
+}
+
+
+/* --- Footer Styling --- */
+/* Styles for the site footer. */
+footer {
+    background-color: var(--kf-primary-brown);
+    color: rgba(255, 248, 225, 0.75); /* Light text color for footer */
+    text-align: center;
+    padding: 2rem 0; /* Padding above and below footer content */
+    margin-top: 45px; /* Space above the footer */
+    font-size: 0.88rem; /* Slightly smaller font size for footer */
+    border-top: 3px solid var(--kf-gold); /* Accent border at the top of the footer */
+}
+footer p {
+    margin-bottom: 6px; /* Space below paragraphs in the footer */
+}
+footer a {
+    color: rgba(255, 248, 225, 0.9); /* Color for links in the footer */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+footer a:hover {
+    color: var(--kf-off-white); /* Link color changes on hover */
+    text-decoration: underline; /* Underlines link on hover */
+}
+
+/* --- Responsive Adjustments --- */
+/* Media queries to adjust styles for different screen sizes. */
+
+@media (max-width: 1300px) { /* For screens slightly wider than the max-width of the container */
+    main.container {
+        /* Ensures the container remains centered with auto margins. */
+        /* No changes needed here if default centering is sufficient. */
+        /* If a small gap is desired even when viewport is slightly larger: */
+        /* margin-left: 20px; */
+        /* margin-right: 20px; */
+    }
+}
+
+@media (max-width: 992px) { /* Tablet devices */
+    main.container {
+        max-width: 100%; /* Allows container to take full width available */
+        width: auto; /* Resets width to auto to respect padding */
+        margin-left: 20px; /* Adds spacing from screen edges */
+        margin-right: 20px;
+        padding: 25px 20px; /* Reduces internal padding */
+    }
+    .header-content { padding: 0 20px; } /* Adjusts header padding */
+    nav ul { gap: 22px; } /* Reduces gap between nav items */
+    h2 { font-size: 2rem; } /* Smaller H2 font size */
+    h3 { font-size: 1.5rem; } /* Smaller H3 font size */
+    .hero-content h2 { font-size: 2.4rem; } /* Smaller hero heading */
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusts product grid columns */
+        gap: 20px; /* Reduces gap in product grid */
+    }
+    .product-link img { height: 200px; } /* Adjusts product image height */
+    .about-content { flex-direction: column; } /* Stacks about text and image vertically */
+    .about-image { margin-top: 20px; }
+}
+
+@media (max-width: 768px) { /* Large Mobile / Small Tablet */
+    html { font-size: 15px; } /* Slightly smaller base font size */
+    main.container {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px 15px; /* Further reduce padding */
+    }
+    .header-content {
+        flex-direction: column; /* Stacks header items vertically */
+        text-align: center;
+        gap: 12px;
+        padding: 0.8rem 15px;
+    }
+     .logo {
+        margin-right: 0; /* Remove side margin when stacked */
+        margin-bottom: 10px; /* Add bottom margin when stacked */
+    }
+    nav ul {
+        flex-direction: column; /* Stacks nav items vertically */
+        gap: 10px; /* Adjust gap for vertical layout */
+    }
+    .welcome-message { margin-left: 0; padding-left: 0; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    .hero-section { height: 350px; margin-bottom: 28px; }
+    .hero-content h2 { font-size: 2rem; }
+    .hero-content p { font-size: 1rem; margin-bottom: 20px; }
+    .hero-button { padding: 10px 25px; font-size: 0.95rem; }
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    form { padding: 20px; } /* Reduce form padding */
+    .button-group { flex-direction: column; gap: 10px; } /* Stack buttons in a group vertically */
+    .button, button.button { width: 100%; } /* Make buttons full width in a group */
+}
+
+@media (max-width: 480px) { /* Small Mobile */
+    html { font-size: 14px; } /* Even smaller base font size */
+    main.container {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 15px 10px;
+    }
+    .hero-content h2 { font-size: 1.7rem; }
+    .hero-content p { font-size: 0.9rem; }
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column product grid */
+        gap: 15px;
+    }
+    .product-link img { height: 220px; } /* Adjust image height for single column */
+    .product-link span { font-size: 1.1rem; }
+    footer { padding: 1.5rem 0; font-size: 0.8rem;}
+    .slideshow-container { max-width: 100%; } /* Allow slideshow to take full width */
+    .slides { height: 300px; } /* Adjust slideshow height for smaller screens */
+    .profile-image { width: 120px; height: 120px; } /* Smaller profile image */
+}
