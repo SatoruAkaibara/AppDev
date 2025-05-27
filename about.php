@@ -15,7 +15,7 @@ session_start();
 <body>
     <?php
     // Include the header content.
-    // 'header.php' likely contains the navigation bar and site logo.
+    // 'header.php'  contains the navigation bar and site logo.
     include 'header.php';
     ?>
 
@@ -24,12 +24,13 @@ session_start();
 
         <div class="about-content">
             <div class="about-text">
-                <p>Welcome to **Our Store**, your destination for unique, handcrafted treasures inspired by the rich cultural heritage of the Philippines. We believe in showcasing the artistry and dedication of local artisans, bringing their beautiful creations directly to you.</p>
-                <p>Our journey began with a passion for preserving traditional techniques while also embracing modern designs. Each product in our collection is carefully curated, reflecting stories of craftsmanship, community, and the vibrant spirit of Filipino creativity.</p>
-                <p>We are committed to fair trade practices, ensuring that our artisans receive equitable compensation for their incredible work. By choosing **Our Store**, you're not just acquiring a product; you're supporting sustainable livelihoods and celebrating a legacy of artistic excellence.</p>
+                <p>We are TELLa, a proudly Filipino clothing brand that creates stylish and breathable tropical wear made for</p>
+                <p>the vibrant, sun-soaked lifestyle of the Philippines. Designed with comfort and culture in mind, our pieces are</p>
+                <p>perfect for embracing the warmthm, whether you're by the beach, in the city, or anywhere in between.</p>
                 
                 <h3>Our Mission</h3>
-                <p>To connect global customers with authentic Filipino craftsmanship, promoting cultural appreciation and empowering local artisan communities through fair and sustainable trade.</p>
+                    <p>To provide high-quality tropical clothing that reflects the vibrant spirit of the Philippines, while promoting sustainable practices, celebrating local craftsmanship, and empowering communities through ethical fashion.</p>
+
             </div>
             <div class="about-image">
                 <img src="images/about_us_photo.jpg" alt="Our Team / Craftsmanship">
