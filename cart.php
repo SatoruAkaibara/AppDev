@@ -11,11 +11,7 @@ if (!isset($_SESSION['username'])) {
 // Get cart items from the session. If the cart is not set, default to an empty array.
 $cart = $_SESSION['cart'] ?? [];
 
-// Product definitions for image prefixes and names.
-// This is used for displaying cart items consistently, especially for image lookups if not stored directly in the cart item.
-// In a real application, this data would ideally come from a database or a shared product data file/service
-// to avoid redundancy with 'product_detail.php' or 'home.php'.
-// For this "no new files" constraint, it's defined here.
+
 $product_definitions_for_cart = [
     "shirt" => ["name" => "Shirt", "image_prefix" => "shirt"],
     "socks" => ["name" => "Socks", "image_prefix" => "socks"],
@@ -80,9 +76,7 @@ if (isset($_POST['remove_item'])) {
                 // Get the display name. Use 'product_name_display' if available, otherwise generate from product key.
                 $item_display_name = $item['product_name_display'] ?? ucfirst($product_key_in_cart); 
 
-                // Determine the image prefix. Use 'image_prefix' from item if stored,
-                // otherwise fall back to the definition in $product_definitions_for_cart,
-                // or finally, use the product key itself as a last resort.
+              
                 $image_prefix_to_use = $item['image_prefix'] ?? ($product_definitions_for_cart[$product_key_in_cart]['image_prefix'] ?? $product_key_in_cart);
                 
                 // Construct the image path. Assumes a naming convention like "prefix_1.jpg".
