@@ -9,15 +9,6 @@ if (!isset($_SESSION['username'])) {
     exit(); // Stop further script execution.
 }
 
-// Product data definition.
-// In a real application, this data would come from a database.
-// For this no-DB setup, it's an array. This structure should be centralized or consistently defined
-// if used by multiple pages (e.g., home.php, cart.php).
-// 'name': Display name of the product.
-// 'price': Base price of the product (before size adjustments).
-// 'image_prefix': Used to construct image filenames (e.g., shirt_1.jpg, shirt_2.jpg).
-// 'images': An array of paths to specific product images for the slideshow.
-// Ensure all image paths (e.g., 'images/shirt_1.jpg') are correct and files exist.
 $products_data = [
     "shirt" => ["name" => "Shirt", "price" => 500, "image_prefix" => "shirt", "images" => ["images/shirt_1.jpg", "images/shirt_2.jpg", "images/shirt_3.jpg"]],
     "socks" => ["name" => "Socks", "price" => 200, "image_prefix" => "socks", "images" => ["images/socks_1.jpg", "images/socks_2.jpg", "images/socks_3.jpg"]],
