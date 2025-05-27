@@ -54,9 +54,13 @@ body {
     line-height: 1.65; /* Default line height for readability */
     color: var(--kf-text-dark); /* Default text color */
     background-color: var(--kf-light-beige); /* Default background color */
-    /* OPTIONAL PNG/JPG FILE: Add a subtle texture to the background. */
-    /* Replace 'images/your_subtle_background_texture.png' with the actual path to your image. */
-    /* Example: background-image: url('images/light_beige_texture.png'); */
+    
+    background-image: url('image/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    
     min-height: 100vh; /* Ensures the body takes at least the full viewport height */
     display: flex;
     flex-direction: column; /* Arranges child elements (header, main, footer) vertically */
@@ -265,7 +269,8 @@ h3 { /* Styles for H3 headings */
 }
 
 /* --- Form Styling --- */
-/* General styles for forms used in login, signup, etc. */
+/* --- Login Container --- */
+/* General styles for forms used in login container, signup, etc. */
 form {
     display: flex;
     flex-direction: column; /* Stacks form elements vertically */
