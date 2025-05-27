@@ -2,12 +2,7 @@
 // Start the session to manage user login state and other session data.
 session_start();
 
-// Define product data for the home page.
-// In a real application with many products, this data would typically come from a database
-// or a shared data file (e.g., JSON, another PHP array include).
-// For this "no new files" constraint, it's defined directly here.
-// Ensure that the keys (e.g., "shirt", "socks") and structure are consistent
-// if this data needs to be cross-referenced with other files like 'product_detail.php'.
+
 $products_on_home = [
     // Each product is an associative array with its details.
     // 'name': Display name of the product.
